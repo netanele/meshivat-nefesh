@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בית המדרש משיבת נפש – בניין חדש בבית אל | תרמו להקמה</title>
+  <meta
+    name="description"
+    content="פרויקט הקמת בית המדרש 'משיבת נפש' בבית אל - מרכז תורני ואולם לאירועים. הצטרפו לשותפות בבניין התורה – מידע, סרטון וקישור לתרומות מאובטחות."
+  />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="בית המדרש משיבת נפש – בניין חדש בבית אל" />
+  <meta
+    property="og:description"
+    content="פרויקט הקמת בית המדרש 'משיבת נפש' בבית אל - מרכז תורני ואולם לאירועים. הצטרפו לשותפות בבניין התורה"
+  />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            input: 'hsl(var(--input))',
+            ring: 'hsl(var(--ring))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+          },
+          borderRadius: {
+            lg: 'var(--radius)',
+            md: 'calc(var(--radius) - 2px)',
+            sm: 'calc(var(--radius) - 4px)',
+          },
+          keyframes: {
+            'accordion-down': {
+              from: { height: '0' },
+              to: { height: 'var(--radix-accordion-content-height)' },
+            },
+            'accordion-up': {
+              from: { height: 'var(--radix-accordion-content-height)' },
+              to: { height: '0' },
+            },
+            'fade-in': {
+              from: { opacity: '0', transform: 'translateY(10px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'accordion-down': 'accordion-down 0.2s ease-out',
+            'accordion-up': 'accordion-up 0.2s ease-out',
+            'fade-in': 'fade-in 0.6s ease-out',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 27 36% 18%;
+      --card: 0 0% 100%;
+      --card-foreground: 27 36% 18%;
+      --primary: 28 25% 41%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 140 50% 18%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 33 25% 96%;
+      --muted-foreground: 27 15% 45%;
+      --accent: 33 25% 90%;
+      --accent-foreground: 27 36% 18%;
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 33 15% 88%;
+      --input: 33 15% 88%;
+      --ring: 28 25% 41%;
+      --radius: 0.75rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      direction: rtl;
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gradient backgrounds */
+    .gradient-primary {
+      background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    }
+
+    .gradient-muted {
+      background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+    }
+
+    /* Glass effect */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Video container aspect ratio */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Button hover effects */
+    .btn-glow:hover {
+      box-shadow: 0 0 20px rgba(139, 111, 71, 0.5);
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center gap-4">
+          <img src="logojpg" alt="לוגו משיבת נפש" class="h-12 w-auto" />
+          <span class="text-xl font-bold text-primary">משיבת נפש</span>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">על הפרויקט</a>
+          <a href="#video" class="text-sm font-medium hover:text-primary transition-colors">וידאו</a>
+          <a href="#impact" class="text-sm font-medium hover:text-primary transition-colors">ההשפעה</a>
+          <a href="#faq" class="text-sm font-medium hover:text-primary transition-colors">שאלות ותשובות</a>
+          <a href="#transparency" class="text-sm font-medium hover:text-primary transition-colors">שקיפות</a>
+          <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
+            תרמו עכשיו
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-accent">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-2">
+          <a href="#about" class="block px-3 py-2 rounded-md hover:bg-accent text-sm font-medium">על הפרויקט</a>
+          <a href="#video" class="block px-3 py-2 rounded-md hover:bg-accent text-sm font-medium">וידאו</a>
+          <a href="#impact" class="block px-3 py-2 rounded-md hover:bg-accent text-sm font-medium">ההשפעה</a>
+          <a href="#faq" class="block px-3 py-2 rounded-md hover:bg-accent text-sm font-medium">שאלות ותשובות</a>
+          <a href="#transparency" class="block px-3 py-2 rounded-md hover:bg-accent text-sm font-medium">שקיפות</a>
+          <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 mt-2">
+            תרמו עכשיו
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden gradient-muted py-20 lg:py-32">
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="container mx-auto px-4 lg:px-8 relative">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+            </svg>
+            פרויקט חדש ומיוחד
+          </div>
+
+          <h1 class="text-4xl lg:text-6xl font-bold leading-tight text-foreground">
+            בונים יחד את בית המדרש <span class="text-primary">"משיבת נפש"</span> בבית אל
+          </h1>
+
+          <p class="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            מרכז תורה קהילתי חדש, הצמוד לבית הכנסת "משיבת נפש", המרחיב את לימוד התורה והחסד ביישוב.
+            המקום ישמש גם כאולם לאירועים משפחתיים וקהילתיים.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium transition-all h-12 px-8 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg btn-glow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+              </svg>
+              תרמו עכשיו
+            </a>
+            <a href="#video"
+               class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-medium transition-all h-12 px-8 border bg-background hover:bg-accent hover:text-accent-foreground">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              צפו בסרטון
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <div class="flex items-center gap-2 text-sm text-muted-foreground">
+              <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              תשלומים מאובטחים
+            </div>
+            <div class="flex items-center gap-2 text-sm text-muted-foreground">
+              <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              קבלה מוכרת לצורכי מס
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img src="bet-midrash.jpg"
+                 alt="תמונת הדמיה של בית המדרש משיבת נפש"
+                 class="w-full h-auto object-cover"
+                 loading="eager" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+          <!-- Floating card -->
+          <!-- <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4 max-w-xs glass-effect">
+            <div class="flex items-start gap-3">
+              <div class="bg-primary/10 rounded-lg p-3">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-foreground">500+</div>
+                <div class="text-sm text-muted-foreground">תומכים בפרויקט</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-primary text-primary-foreground">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center animate-on-scroll">
+          <div class="text-4xl lg:text-5xl font-bold mb-2">350,000 ₪</div>
+          <div class="text-sm lg:text-base opacity-90">יעד הגיוס</div>
+        </div>
+        <div class="text-center animate-on-scroll">
+          <div class="text-4xl lg:text-5xl font-bold mb-2">300+</div>
+          <div class="text-sm lg:text-base opacity-90">משפחות בקהילה</div>
+        </div>
+        <div class="text-center animate-on-scroll">
+          <div class="text-4xl lg:text-5xl font-bold mb-2">24/7</div>
+          <div class="text-sm lg:text-base opacity-90">פעילות בית המדרש</div>
+        </div>
+        <div class="text-center animate-on-scroll">
+          <div class="text-4xl lg:text-5xl font-bold mb-2">100%</div>
+          <div class="text-sm lg:text-base opacity-90">שקיפות מלאה</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-foreground">למה בית מדרש חדש?</h2>
+        <p class="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+          בית המדרש "משיבת נפש" מצטרף לבית הכנסת הוותיק בבית אל, וייתן מענה לשיעורים,
+          חברותות ותפילות בהיקף רחב יותר.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Feature Card 1 -->
+        <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">חלל לימוד מרווח</h3>
+          <p class="text-muted-foreground">מרחב מעוצב ומותאם לחברותות ושיעורים בכל שעות היום</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">פעיל לאורך היום</h3>
+          <p class="text-muted-foreground">בית מדרש תוסס ופעיל 24/7 ללימוד ועיון</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">לימוד בין-דורי</h3>
+          <p class="text-muted-foreground">מסגרות לימוד לכל הגילאים והרמות בקהילה</p>
+        </div>
+
+        <!-- Feature Card 4 -->
+        <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">אולם לאירועים</h3>
+          <p class="text-muted-foreground">מרחב רב-תכליתי לשמחות, כינוסים ומפגשים קהילתיים</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video" class="py-20 lg:py-32 gradient-muted">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-foreground">הכירו את הפרויקט מקרוב</h2>
+          <p class="text-lg text-muted-foreground">
+            צפו בסרטון ולמדו על החזון, התכנית והייחודיות של בית המדרש החדש בבית אל
+          </p>
+        </div>
+
+        <div class="animate-on-scroll bg-card rounded-2xl border shadow-2xl overflow-hidden">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/91cYil-tRkY"
+              title="סרטון המציג את פרויקט בניית בית המדרש משיבת נפש בבית אל"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact" class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-foreground">ההשפעה שלכם</h2>
+        <p class="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+          כל תרומה תורמת לבניית מרכז תורני שישפיע על דורות
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="animate-on-scroll text-center">
+          <div class="bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">תורם מייסד</h3>
+          <p class="text-muted-foreground">שמכם יונצח בבית המדרש כשותפים מייסדים בפרויקט</p>
+        </div>
+
+        <div class="animate-on-scroll text-center">
+          <div class="bg-secondary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">זכות לעולם הבא</h3>
+          <p class="text-muted-foreground">השקעה נצחית בתורה ובקהילה המשפיעה לדורות</p>
+        </div>
+
+        <div class="animate-on-scroll text-center">
+          <div class="bg-accent rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">קהילה חזקה</h3>
+          <p class="text-muted-foreground">תרומה למארג חברתי ותורני מלוכד ותוסס</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section id="donate" class="py-20 lg:py-32 gradient-primary text-primary-foreground">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="animate-on-scroll space-y-6">
+          <h2 class="text-3xl lg:text-5xl font-bold mb-6">שותפים בבניין התורה</h2>
+          <p class="text-lg lg:text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
+            הצטרפו אלינו היום והיו שותפים בהקמת בית מדרש שיפעל ימים ולילות בלימוד, תפילה וחסד
+          </p>
+
+          <!-- Donation Amounts -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 my-12">
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="bg-white text-primary rounded-xl p-6 hover:scale-105 transition-transform shadow-lg hover:shadow-2xl">
+              <div class="text-3xl font-bold">180 ₪</div>
+            </a>
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="bg-white text-primary rounded-xl p-6 hover:scale-105 transition-transform shadow-lg hover:shadow-2xl">
+              <div class="text-3xl font-bold">360 ₪</div>
+            </a>
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="bg-white text-primary rounded-xl p-6 hover:scale-105 transition-transform shadow-lg hover:shadow-2xl">
+              <div class="text-3xl font-bold">720 ₪</div>
+            </a>
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="bg-white text-primary rounded-xl p-6 hover:scale-105 transition-transform shadow-lg hover:shadow-2xl">
+              <div class="text-3xl font-bold">1,800 ₪</div>
+            </a>
+            <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+               class="bg-white text-primary rounded-xl p-6 hover:scale-105 transition-transform shadow-lg hover:shadow-2xl">
+              <div class="text-lg font-bold">סכום אחר</div>
+            </a>
+          </div>
+
+          <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-medium transition-all h-14 px-10 bg-white text-primary hover:bg-white/90 shadow-2xl btn-glow">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
+            תרמו עכשיו
+          </a>
+
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap justify-center gap-6 pt-8">
+            <div class="flex items-center gap-2 bg-white/10 rounded-lg px-4 py-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              תשלום מאובטח
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 rounded-lg px-4 py-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              קבלה למייל
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 rounded-lg px-4 py-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              מוכר לצורכי מס
+            </div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-xl p-6 mt-8 text-sm">
+            <strong>הקדשת תרומה:</strong> להקדשת תרומה לעילוי נשמת / לרפואה שלמה,
+            אנא ציינו את הפרטים בשדה ההערות בטופס התשלום
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 lg:py-32">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-foreground">שאלות ותשובות</h2>
+          <p class="text-lg text-muted-foreground">תשובות לשאלות הנפוצות על הפרויקט</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">מה מטרת בית המדרש?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                להרחיב את מסגרות הלימוד והקהילה סביב בית הכנסת "משיבת נפש" בבית אל.
+                בית המדרש ישמש כמרכז תורני פעיל המיועד לחברותות, שיעורים, ולימוד קבוע לכל גילאי הקהילה.
+              </p>
+            </details>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">איפה יוקם בית המדרש?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                בית המדרש יוקם בקירבת בית הכנסת "משיבת נפש" בבית אל, והוא יהווה חלק אינטגרלי מהמתחם הקהילתי התורני.
+              </p>
+            </details>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">איך ניתן לתרום?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                ניתן לתרום בקלות באמצעות הטופס המאובטח שלנו דרך חברת Tranzila.
+                כל התשלומים מאובטחים ומוצפנים, ותקבלו קבלה מוכרת לצורכי מס באופן מיידי למייל.
+              </p>
+            </details>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">האם התרומה מוכרת לצורכי מס?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                כן, יינתנו קבלות מוכרות כנדרש לכל תורם. הקבלה תישלח למייל שתציינו בטופס התרומה באופן אוטומטי.
+              </p>
+            </details>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">מתי צפוי בית המדרש להיפתח?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                אנו עובדים במרץ על קידום הפרויקט. ככל שנצבור יותר תמיכה, כך נוכל להאיץ את התהליך ולהביא את החזון למימוש במהירות.
+              </p>
+            </details>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="animate-on-scroll bg-card rounded-xl border p-6 shadow-sm">
+            <details class="group">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+                <h3 class="text-lg font-semibold">האם ניתן יהיה לקיים אירועים באולם?</h3>
+                <svg class="w-5 h-5 text-muted-foreground transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="mt-4 text-muted-foreground leading-relaxed">
+                בהחלט! בית המדרש יוכל לשמש גם כאולם לאירועים משפחתיים וקהילתיים – שמחות, כינוסים,
+                הרצאות ומפגשים מיוחדים. המקום מעוצב להיות רב-תכליתי ומותאם למגוון צרכים.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency Section -->
+  <section id="transparency" class="py-20 lg:py-32 gradient-muted">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+        <div class="bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+
+        <h2 class="text-3xl lg:text-5xl font-bold mb-6 text-foreground">שקיפות ואמון</h2>
+        <p class="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
+          ניהול מוקפד ושקיפות מלאה – פרטי העמותה זמינים בגיידסטאר.
+          הפרויקט מנוהל בשקיפות מלאה ובפיקוח הדוק על כל התרומות והוצאות.
+        </p>
+
+        <a href="https://www.guidestar.org.il/organization/580640993"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-medium transition-all h-14 px-10 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg btn-glow">
+          פרטי העמותה והתנהלותה באתר גיידסטאר
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+
+        <p class="mt-8 text-muted-foreground">
+          העמותה פועלת בהתאם לכל הכללים והדרישות של רשויות המס והרשם לעמותות
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 lg:py-32 gradient-primary text-primary-foreground">
+    <div class="container mx-auto px-4 lg:px-8 text-center">
+      <div class="max-w-3xl mx-auto animate-on-scroll space-y-6">
+        <h2 class="text-3xl lg:text-5xl font-bold">מצטרפים עכשיו לבניין התורה בבית אל</h2>
+        <p class="text-lg lg:text-xl opacity-90">
+          השותפות שלכם היא אבן היסוד בבניין בית המדרש החדש
+        </p>
+        <a href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
+           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-medium transition-all h-14 px-10 bg-white text-primary hover:bg-white/90 shadow-2xl btn-glow">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+          תרמו עכשיו
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-foreground text-background py-12">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">צרו קשר</h3>
+          <div class="space-y-2 text-sm opacity-90">
+            <p>
+              <a href="tel:052-920-1780" class="hover:underline">טלפון: 052-920-1780</a>
+            </p>
+            <p>
+              <a href="mailto:soul-stirring3@gmail.com" class="hover:underline">אימייל: soul-stirring3@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4">כתובת</h3>
+          <div class="space-y-2 text-sm opacity-90">
+            <p>בית אל</p>
+            <p>בית הכנסת ובית המדרש "משיבת נפש"</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4">קישורים מהירים</h3>
+          <div class="space-y-2 text-sm opacity-90">
+            <p><a href="#about" class="hover:underline">על הפרויקט</a></p>
+            <p><a href="#video" class="hover:underline">וידאו</a></p>
+            <p><a href="#faq" class="hover:underline">שאלות ותשובות</a></p>
+            <p><a href="#transparency" class="hover:underline">שקיפות</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-background/20 pt-8 text-center">
+        <p class="text-sm opacity-75">&copy; 2025 משיבת נפש. כל הזכויות שמורות.</p>
+        <a href="#" class="inline-block mt-4 text-sm hover:underline">↑ חזרה למעלה</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }
+      });
+    });
+
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add scroll listener for header shadow
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 10) {
+        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
