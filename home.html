@@ -558,29 +558,37 @@
       }
 
       .footer-content {
-        text-align: center;
+        text-align: right;
       }
 
-      .footer-contact {
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
+      .footer-contact,
+      .footer-address,
+      .footer-links {
+        font-size: 0.95rem;
         color: var(--background-white);
       }
 
-      .footer-contact p {
+      .footer-contact p,
+      .footer-address p,
+      .footer-links p {
         color: var(--background-white);
       }
 
-      .footer-contact a {
+      .footer-contact a,
+      .footer-address a,
+      .footer-links a {
         color: var(--background-white);
-        text-decoration: underline;
+        text-decoration: none;
       }
 
       .footer-contact a:hover,
-      .footer-contact a:focus {
+      .footer-contact a:focus,
+      .footer-address a:hover,
+      .footer-address a:focus,
+      .footer-links a:hover,
+      .footer-links a:focus {
         color: var(--primary-light);
-        outline: 2px solid var(--primary-light);
-        outline-offset: 2px;
+        text-decoration: underline;
       }
 
       /* Override for all footer links */
@@ -593,22 +601,13 @@
         color: var(--primary-light) !important;
       }
 
-      .footer-address {
-        margin: 1rem 0;
-        font-size: 1rem;
-        color: var(--background-white);
-      }
-
-      .footer-address p {
-        color: var(--background-white);
-      }
-
       .footer-copyright {
         margin-top: 2rem;
         padding-top: 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         font-size: 0.95rem;
         color: var(--background-white);
+        text-align: center;
       }
 
       .footer-copyright p {
@@ -691,6 +690,11 @@
 
         .section-header h2 {
           font-size: 2rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
         }
       }
 
@@ -1049,7 +1053,7 @@
       <div class="container" style="text-align: center">
         <h2>מצטרפים עכשיו לבניין התורה בבית אל</h2>
         <p style="font-size: 1.3rem; margin: 2rem 0">
-          השותפות שלכם היא אבן היסוד בבניין בית המדרש החדש
+          השותפות שלכם היא אבן היסוד בבנין בית המדרש החדש
         </p>
         <a
           href="https://pay.tranzila.com/fxpmoshbzb/QjdJSWY5TVAyZmxDcWNic3BJZTEvdz09"
@@ -1059,9 +1063,13 @@
             color: var(--primary-dark);
             font-size: 1.3rem;
             padding: 1.25rem 3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
           "
           aria-label="תרמו עכשיו למען בניית בית המדרש"
         >
+          <span>❤</span>
           תרמו עכשיו
         </a>
       </div>
@@ -1070,15 +1078,19 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <div class="footer-content">
+        <div class="footer-content" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 2rem;">
+
+          <!-- Column 1 - Contact -->
           <div class="footer-contact">
-            <p><strong>צרו קשר:</strong></p>
-            <p>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--background-white);">צרו קשר</h3>
+            <p style="margin-bottom: 0.5rem;">
               טלפון:
               <a href="tel:052-920-1780" aria-label="התקשרו אלינו"
                 >052-920-1780</a
               >
-              | אימייל:
+            </p>
+            <p>
+              אימייל:
               <a
                 href="mailto:soul-stirring3@gmail.com"
                 aria-label="שלחו לנו מייל"
@@ -1087,17 +1099,30 @@
             </p>
           </div>
 
+          <!-- Column 2 - Address -->
           <div class="footer-address">
-            <p>כתובת: בית אל</p>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--background-white);">כתובת</h3>
+            <p style="margin-bottom: 0.5rem;">בית אל</p>
             <p>בית הכנסת ובית המדרש "משיבת נפש"</p>
           </div>
 
-          <div class="footer-copyright">
-            <p>&copy; 2025 משיבת נפש. כל הזכויות שמורות.</p>
-            <a href="#top" class="back-to-top" aria-label="חזרה לראש הדף"
-              >↑ חזרה למעלה</a
-            >
+          <!-- Column 3 - Quick Links -->
+          <div class="footer-links">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--background-white);">קישורים מהירים</h3>
+            <p style="margin-bottom: 0.5rem;"><a href="#about">על הפרויקט</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="#video">וידאו</a></p>
+            <p style="margin-bottom: 0.5rem;"><a href="#faq">שאלות ותשובות</a></p>
+            <p><a href="#transparency">שקיפות</a></p>
           </div>
+
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-copyright">
+          <p>&copy; 2025 משיבת נפש. כל הזכויות שמורות.</p>
+          <a href="#top" class="back-to-top" aria-label="חזרה לראש הדף"
+            >↑ חזרה למעלה</a
+          >
         </div>
       </div>
     </footer>
