@@ -697,6 +697,10 @@
           grid-template-columns: 1fr !important;
         }
 
+        .about-content > div[style*="grid-template-columns"] > div[style*="grid-column"] {
+          max-width: 100% !important;
+        }
+
         .footer-content {
           grid-template-columns: 1fr !important;
           gap: 2rem !important;
@@ -854,7 +858,7 @@
             </li>
           </ul>
 
-          <div style="margin: 3rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+          <div style="margin: 3rem 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: center;">
             <div style="text-align: center;">
               <img
                 src="bet-midrash2.jpg"
@@ -867,6 +871,14 @@
               <img
                 src="bet-midrash3.jpg"
                 alt="בית מדרש משיבת נפש - חלל לימוד עם שולחנות וספרים"
+                style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg);"
+                loading="lazy"
+              />
+            </div>
+            <div style="text-align: center; grid-column: 1 / -1; max-width: 50%; margin: 0 auto;">
+              <img
+                src="bet-midrash4.jpg"
+                alt="בית מדרש משיבת נפש - תלמידים לומדים במרכז תורני"
                 style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-lg);"
                 loading="lazy"
               />
