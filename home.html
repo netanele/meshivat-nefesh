@@ -1793,14 +1793,23 @@
           // Touch/swipe support
           let touchStartX = 0;
           let touchEndX = 0;
+          let touchTimeout;
 
           carousel.addEventListener("touchstart", (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            // Pause autoplay on touch
+            clearInterval(autoplayInterval);
+            clearTimeout(touchTimeout);
           });
 
           carousel.addEventListener("touchend", (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
+
+            // Resume autoplay after 1 second of no touch
+            touchTimeout = setTimeout(() => {
+              autoplayInterval = setInterval(nextSlide, 1000);
+            }, 1000);
           });
 
           function handleSwipe() {
@@ -1811,11 +1820,12 @@
           // Auto-play (optional - 1 second)
           let autoplayInterval = setInterval(nextSlide, 1000);
 
-          // Pause autoplay on hover
+          // Pause autoplay on hover (desktop)
           carousel.addEventListener("mouseenter", () => {
             clearInterval(autoplayInterval);
           });
 
+          // Resume autoplay on mouse leave (desktop)
           carousel.addEventListener("mouseleave", () => {
             autoplayInterval = setInterval(nextSlide, 1000);
           });
