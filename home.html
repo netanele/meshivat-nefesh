@@ -1055,6 +1055,13 @@
         }
       }
 
+      /* Landscape mode on mobile - remove sticky header */
+      @media (max-height: 500px) and (orientation: landscape) {
+        header {
+          position: relative;
+        }
+      }
+
       /* Accessibility */
       .sr-only {
         position: absolute;
