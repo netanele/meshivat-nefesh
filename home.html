@@ -423,34 +423,6 @@
         display: block;
       }
 
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(139, 111, 71, 0.8);
-        color: var(--background-white);
-        border: none;
-        padding: 1rem 1.25rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        z-index: 10;
-      }
-
-      .carousel-btn:hover {
-        background-color: var(--primary-dark);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .carousel-prev {
-        right: 1rem;
-      }
-
-      .carousel-next {
-        left: 1rem;
-      }
-
       .carousel-dots {
         display: flex;
         justify-content: center;
@@ -927,19 +899,6 @@
           height: 350px;
         }
 
-        .carousel-btn {
-          padding: 0.75rem 1rem;
-          font-size: 1.25rem;
-        }
-
-        .carousel-prev {
-          right: 0.5rem;
-        }
-
-        .carousel-next {
-          left: 0.5rem;
-        }
-
         .carousel-dots {
           padding: 1rem 0;
           gap: 0.5rem;
@@ -1093,11 +1052,6 @@
 
         .carousel-slide img {
           height: 280px;
-        }
-
-        .carousel-btn {
-          padding: 0.5rem 0.75rem;
-          font-size: 1.1rem;
         }
       }
 
@@ -1303,13 +1257,6 @@
                 />
               </div>
             </div>
-
-            <button class="carousel-btn carousel-prev" aria-label="תמונה קודמת">
-              &#10095;
-            </button>
-            <button class="carousel-btn carousel-next" aria-label="תמונה הבאה">
-              &#10094;
-            </button>
 
             <div class="carousel-dots"></div>
           </div>
@@ -1736,8 +1683,6 @@
         // Carousel functionality
         const carousel = document.querySelector(".carousel-wrapper");
         const slides = document.querySelectorAll(".carousel-slide");
-        const prevBtn = document.querySelector(".carousel-prev");
-        const nextBtn = document.querySelector(".carousel-next");
         const dotsContainer = document.querySelector(".carousel-dots");
 
         if (carousel && slides.length > 0) {
@@ -1779,10 +1724,6 @@
             currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             updateCarousel();
           }
-
-          // Event listeners
-          nextBtn.addEventListener("click", prevSlide); // RTL: next button goes to previous
-          prevBtn.addEventListener("click", nextSlide); // RTL: prev button goes to next
 
           // Keyboard navigation
           document.addEventListener("keydown", (e) => {
