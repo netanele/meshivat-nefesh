@@ -1770,6 +1770,16 @@
           carousel.addEventListener("mouseleave", () => {
             autoplayInterval = setInterval(nextSlide, 2000);
           });
+
+          // Pause autoplay when hovering over dots
+          dotsContainer.addEventListener("mouseenter", () => {
+            clearInterval(autoplayInterval);
+          });
+
+          // Resume autoplay when leaving dots
+          dotsContainer.addEventListener("mouseleave", () => {
+            autoplayInterval = setInterval(nextSlide, 2000);
+          });
         }
       });
     </script>
