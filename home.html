@@ -1808,7 +1808,7 @@
 
             // Resume autoplay after 1 second of no touch
             touchTimeout = setTimeout(() => {
-              autoplayInterval = setInterval(nextSlide, 1000);
+              autoplayInterval = setInterval(nextSlide, 2000);
             }, 1000);
           });
 
@@ -1817,8 +1817,8 @@
             if (touchEndX > touchStartX + 50) prevSlide(); // Swipe right
           }
 
-          // Auto-play (optional - 1 second)
-          let autoplayInterval = setInterval(nextSlide, 1000);
+          // Auto-play (optional - 2 seconds)
+          let autoplayInterval = setInterval(nextSlide, 2000);
 
           // Pause autoplay on hover (desktop)
           carousel.addEventListener("mouseenter", () => {
@@ -1827,7 +1827,7 @@
 
           // Resume autoplay on mouse leave (desktop)
           carousel.addEventListener("mouseleave", () => {
-            autoplayInterval = setInterval(nextSlide, 1000);
+            autoplayInterval = setInterval(nextSlide, 2000);
           });
         }
       });
