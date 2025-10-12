@@ -1808,8 +1808,8 @@
             if (touchEndX > touchStartX + 50) prevSlide(); // Swipe right
           }
 
-          // Auto-play (optional - 5 seconds)
-          let autoplayInterval = setInterval(nextSlide, 5000);
+          // Auto-play (optional - 1 second)
+          let autoplayInterval = setInterval(nextSlide, 1000);
 
           // Pause autoplay on hover
           carousel.addEventListener("mouseenter", () => {
@@ -1817,7 +1817,7 @@
           });
 
           carousel.addEventListener("mouseleave", () => {
-            autoplayInterval = setInterval(nextSlide, 5000);
+            autoplayInterval = setInterval(nextSlide, 1000);
           });
         }
       });
