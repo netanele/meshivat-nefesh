@@ -1147,12 +1147,15 @@
           <div class="hero-text">
             <h1>
               בונים יחד את בית המדרש
-              <span style="color: #d97706; font-weight: 800"> "משיבת נפש" </span> בבית אל
+              <span style="color: #d97706; font-weight: 800">
+                "משיבת נפש"
+              </span>
+              בבית אל
             </h1>
             <p class="subtitle">
-              מרכז תורה קהילתי חדש, הצמוד לבית הכנסת "משיבת נפש" ברסלב בבית אל, המרחיב את
-              לימוד התורה והחסד ביישוב. המקום ישמש גם כאולם לאירועים משפחתיים
-              וקהילתיים.
+              מרכז תורה קהילתי חדש, הצמוד לבית הכנסת "משיבת נפש" ברסלב בבית אל,
+              המרחיב את לימוד התורה והחסד ביישוב. המקום ישמש גם כאולם לאירועים
+              משפחתיים וקהילתיים.
             </p>
 
             <div class="hero-buttons">
@@ -1215,7 +1218,7 @@
             </li>
           </ul>
 
-          <div style="margin: 3rem auto; max-width: 1000px; text-align: center;">
+          <div style="margin: 3rem auto; max-width: 1000px; text-align: center">
             <img
               src="bet-midrash-pics/outside.jpg"
               alt="בית מדרש משיבת נפש - מבט חיצוני על הבניין"
@@ -1227,7 +1230,13 @@
               "
               loading="lazy"
             />
-            <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--text-light);">
+            <p
+              style="
+                margin-top: 1rem;
+                font-size: 1.1rem;
+                color: var(--text-light);
+              "
+            >
               מבט חיצוני על בית המדרש החדש
             </p>
           </div>
@@ -1259,6 +1268,13 @@
                 <img
                   src="bet-midrash-pics/bet-midrash4.jpg"
                   alt="בית מדרש משיבת נפש - תלמידים לומדים במרכז תורני"
+                  loading="lazy"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="bet-midrash-pics/plans.jpeg"
+                  alt="בית מדרש משיבת נפש - תכנית קומת כניסה ופרטי בניה"
                   loading="lazy"
                 />
               </div>
@@ -1507,14 +1523,11 @@
       </div>
     </section>
 
-    <!-- Community Photos Section -->
-    <!-- <section id="community">
+    <!--Community Photos Section -->
+    <section id="community">
       <div class="container">
         <div class="section-header">
           <h2>מהקהילה שלנו</h2>
-          <p style="font-size: 1.2rem; color: var(--text-light); margin-top: 1rem;">
-            רגעים מיוחדים מחיי הקהילה והלימוד בבית המדרש
-          </p>
         </div>
 
         <div class="carousel-container">
@@ -1545,7 +1558,7 @@
           <div class="carousel-dots community-dots"></div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1731,7 +1744,8 @@
 
         carousels.forEach((carousel) => {
           const slides = carousel.querySelectorAll(".carousel-slide");
-          const dotsContainer = carousel.parentElement.querySelector(".carousel-dots");
+          const dotsContainer =
+            carousel.parentElement.querySelector(".carousel-dots");
 
           if (carousel && slides.length > 0) {
             let currentIndex = 0;
