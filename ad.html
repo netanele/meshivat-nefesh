@@ -1,188 +1,252 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>מודעת עיתון - משיבת נפש</title>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Heebo', sans-serif;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .ad-container {
-            width: 10cm;
-            height: 15cm;
-            background: white;
-            border: 3px solid #333;
-            padding: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        
-        .header-images {
-            margin-bottom: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .header-images img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .main-title {
-            text-align: center;
-            font-size: 14px;
-            font-weight: 900;
-            color: #1a365d;
-            line-height: 1.3;
-            margin-bottom: 8px;
-            padding: 8px;
-            background: linear-gradient(135deg, #f6f8fb 0%, #e9f2f9 100%);
-            border-radius: 4px;
-            border-right: 4px solid #2c5282;
-        }
-        
-        .qr-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin-top: 10px;
-            padding: 8px;
-            background: #f7fafc;
-            border-radius: 5px;
-        }
-        
-        .qr-item {
-            text-align: center;
-            padding: 8px;
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-        
-        .qr-item h3 {
-            font-size: 11px;
-            font-weight: 700;
-            color: #2c5282;
-            margin-bottom: 5px;
-        }
-        
-        .qr-code {
-            display: flex;
-            justify-content: center;
-            margin: 5px 0;
-        }
-        
-        .qr-description {
-            font-size: 8px;
-            color: #4a5568;
-            margin-top: 5px;
-        }
-        
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap');
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Heebo', sans-serif;
+          background: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          padding: 20px;
+      }
+
+      .ad-container {
+          width: 10cm;
+          height: 15cm;
+          background: white;
+          border: 3px solid #333;
+          padding: 15px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      }
+
+      .header-images {
+          margin-bottom: 4px;
+          border-radius: 5px;
+          overflow: hidden;
+      }
+
+      .header-images img {
+          width: 100%;
+          height: auto;
+          display: block;
+      }
+
+      .main-title {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 900;
+          color: #1a365d;
+          line-height: 1.3;
+          margin-bottom: 3px;
+          padding: 5px;
+          background: linear-gradient(135deg, #f6f8fb 0%, #e9f2f9 100%);
+          border-radius: 4px;
+          border-right: 4px solid #2c5282;
+      }
+
+      .qr-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+          margin-top: 4px;
+          padding: 5px;
+          background: #f7fafc;
+          border-radius: 5px;
+      }
+
+      .qr-item {
+          text-align: center;
+          padding: 4px;
+          background: white;
+          border-radius: 4px;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      }
+
+      .qr-item h3 {
+          font-size: 11px;
+          font-weight: 700;
+          color: #2c5282;
+          margin-bottom: 5px;
+      }
+
+      .qr-code {
+          display: flex;
+          justify-content: center;
+          margin: 3px 0;
+      }
+
+      .qr-description {
+          font-size: 8px;
+          color: #4a5568;
+          margin-top: 3px;
+      }
+
         .footer {
             text-align: center;
-            margin-top: 10px;
-            padding-top: 8px;
+            margin-top: 4px;
+            padding-top: 3px;
             border-top: 2px solid #e2e8f0;
             font-size: 10px;
             color: #2d3748;
             font-weight: 600;
         }
         
-        @media print {
-            body {
-                background: white;
-                margin: 0;
-                padding: 0;
-            }
-            .ad-container {
-                border: none;
-                box-shadow: none;
-                page-break-inside: avoid;
-                width: 10cm;
-                height: 15cm;
-                margin: 0;
-            }
-            @page {
-                size: 10cm 15cm;
-                margin: 0;
-            }
+        .tax-receipt {
+            margin-top: 4px;
+            padding: 3px 6px;
+            font-size: 8px;
+            color: #4a5568;
+            font-weight: 500;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6ecf2 100%);
+            border-radius: 3px;
+            display: inline-block;
+            border: 1px solid #cbd5e0;
         }
+
+      .donation-items {
+          margin-top: 4px;
+          padding: 4px;
+          background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+          border-radius: 3px;
+          border: 1px solid #cbd5e0;
+      }
+
+      .items-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px;
+          font-size: 8.5px;
+          line-height: 1.25;
+      }
+
+      .items-grid .item {
+          padding: 2px 3px;
+          background: white;
+          border-radius: 2px;
+          color: #2d3748;
+          border-right: 2px solid #4299e1;
+          font-weight: 900;
+          box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+      }
+      }
+      }
+          font-weight: 500;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+
+      @media print {
+          body {
+              background: white;
+              margin: 0;
+              padding: 0;
+          }
+          .ad-container {
+              border: none;
+              box-shadow: none;
+              page-break-inside: avoid;
+              width: 10cm;
+              height: 15cm;
+              margin: 0;
+          }
+          @page {
+              size: 10cm 15cm;
+              margin: 0;
+          }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="ad-container">
-        <div class="header-images">
-            <img id="headerImage" src="" alt="משיבת נפש - אולם לימוד ובניין חדש">
+      <div class="header-images">
+        <img id="headerImage" src="" alt="משיבת נפש - אולם לימוד ובניין חדש" />
+      </div>
+
+      <h1 class="main-title">
+        בית הכנסת משיבת נפש, מתרחב!<br />
+        באו להיות שותפים בהקמת בית מדרש חדש<br />
+        - אולם שיעורים רב תכליתי.
+      </h1>
+
+      <div class="qr-section">
+        <div class="qr-item">
+          <h3>📋 פרטי הפרויקט</h3>
+          <div class="qr-code" id="qr-project"></div>
+          <p class="qr-description">סרקו לקבלת מידע מלא על הפרויקט</p>
         </div>
-        
-        <h1 class="main-title">
-            בית הכנסת משיבת נפש, מתרחב!<br>
-            באו להיות שותפים בהקמת בית מדרש חדש<br>
-            - אולם שיעורים רב תכליתי.
-        </h1>
-        
-        <div class="qr-section">
-            <div class="qr-item">
-                <h3>📋 פרטי הפרויקט</h3>
-                <div class="qr-code" id="qr-project"></div>
-                <p class="qr-description">סרקו לקבלת מידע מלא על הפרויקט</p>
-            </div>
-            
-            <div class="qr-item">
-                <h3>💝 לתרומות</h3>
-                <div class="qr-code" id="qr-donation"></div>
-                <p class="qr-description">סרקו לתרומה מאובטחת</p>
-            </div>
+
+        <div class="qr-item">
+          <h3>💝 לתרומות</h3>
+          <div class="qr-code" id="qr-donation"></div>
+          <p class="qr-description">סרקו לתרומה מאובטחת</p>
         </div>
-        
-        <div class="footer">
-            תרמו עכשיו וקחו חלק בבניית בית התורה!
+      </div>
+
+      <div class="footer">
+        תרמו עכשיו וקחו חלק בבניית בית התורה!
+        <div class="tax-receipt">חשבונית לפי סעיף 46 לפקודת מס הכנסה</div>
+      </div>
+
+      <div class="donation-items">
+        <div class="items-grid">
+          <div class="item">1. מבואה ודלת כניסה - 13,000 ₪</div>
+          <div class="item">2. מחסן בית המדרש - 7,000 ₪</div>
+          <div class="item">3. מזגנים לבית המדרש - 6,000 ₪ למזגן</div>
+          <div class="item">4. ארונות מטבח - 9,000 ₪</div>
+          <div class="item">5. שעון קיר - 600 ₪</div>
+          <div class="item">6. תאורת מבוא - 1,500 ₪</div>
+          <div class="item">7. תאורת בית המדרש - 9,000 ₪</div>
+          <div class="item">8. תיבת ש"צ - 8,000 ₪</div>
+          <div class="item">9. ארון קודש - 12,500 ₪</div>
+          <div class="item">10. ריהוט - 18,000 ₪</div>
+          <div class="item">11. 9 ספריות - 4,000 ₪</div>
+          <div class="item">12. מ"ר - 1,000 ₪</div>
+          <div class="item">13. חדר לימוד - 45,000 ₪</div>
+          <div class="item">14. חצי חדר - 25,000 ₪</div>
         </div>
+      </div>
     </div>
-    
+
     <script>
-        // Set the embedded image
-        document.getElementById('headerImage').src = 'bet-midrash-pics/combined.jpg';
-        
-        // Generate QR codes when page loads
-        window.onload = function() {
-            // Project details QR code
-            new QRCode(document.getElementById("qr-project"), {
-                text: "https://netanele.github.io/meshivat-nefesh/home.html",
-                width: 80,
-                height: 80,
-                colorDark: "#1a365d",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
-            
-            // Donation QR code
-            new QRCode(document.getElementById("qr-donation"), {
-                text: "https://pay.tranzila.com/fxpmoshbzb/",
-                width: 80,
-                height: 80,
-                colorDark: "#2c5282",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        };
+      // Set the embedded image
+      document.getElementById("headerImage").src =
+        "bet-midrash-pics/combined.jpg";
+
+      // Generate QR codes when page loads
+      window.onload = function () {
+        // Project details QR code
+        new QRCode(document.getElementById("qr-project"), {
+          text: "https://netanele.github.io/meshivat-nefesh/home.html",
+          width: 80,
+          height: 80,
+          colorDark: "#1a365d",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+
+        // Donation QR code
+        new QRCode(document.getElementById("qr-donation"), {
+          text: "https://pay.tranzila.com/fxpmoshbzb/",
+          width: 80,
+          height: 80,
+          colorDark: "#2c5282",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+      };
     </script>
-</body>
+  </body>
 </html>
