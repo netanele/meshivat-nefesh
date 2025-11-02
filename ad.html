@@ -29,12 +29,13 @@
           height: 15cm;
           background: white;
           border: 3px solid #333;
-          padding: 15px;
+          padding: 8px;
           box-shadow: 0 0 20px rgba(0,0,0,0.1);
       }
 
       .header-images {
           margin-bottom: 1px;
+          margin-top: 0;
           border-radius: 5px;
           overflow: hidden;
       }
@@ -98,8 +99,8 @@
         .footer {
             text-align: center;
             margin-top: 1px;
+            margin-bottom: 2px;
             padding-top: 1px;
-            border-top: 2px solid #e2e8f0;
             font-size: 10px;
             color: #2d3748;
             font-weight: 600;
@@ -117,6 +118,13 @@
             border: 1px solid #fbbf24;
             box-shadow: 0 1px 2px rgba(251, 191, 36, 0.2);
             display: table;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex: 0 0 auto;
         }
             display: inline-block;
         }
@@ -148,7 +156,42 @@
             border-radius: 3px;
             border: 1px solid #16a34a;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .shabbat-info {
+            flex: 0 0 auto;
+            padding: 2px 3px;
+            background: linear-gradient(135deg, #fef9f3 0%, #fef3e2 100%);
+            border-radius: 3px;
+            border: 1px solid #f59e0b;
+            font-size: 7px;
+            line-height: 1.3;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
+            color: #92400e;
+        }
+
+        .shabbat-info .title {
+            font-weight: 700;
+            font-size: 8px;
+            color: #1a365d;
+            margin-bottom: 2px;
+        }
+
+        .shabbat-info .subtitle {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .shabbat-info .main-text {
+            font-weight: 700;
+            color: #1a365d;
+            font-size: 7.5px;
         }
 
         .items-grid {
@@ -261,12 +304,14 @@
         </div>
       </div>
 
-      <div class="footer">
-        תרמו עכשיו וקחו חלק בבניית בית התורה!
+      <div class="shabbat-info">
+        <div class="title">קבלת שבת: לפני שקיעה</div>
+        <div class="subtitle">שחרית של שבת כותיקין - 50 דקי לפני הנץ הנראה.</div>
+        <div class="main-text">קידוש ברב עם ושיעור הלכה מפי הרב נועם דביר מייזלס שליט"א</div>
       </div>
-      <div class="tax-receipt">חשבונית לפי סעיף 46 לפקודת מס הכנסה</div>
 
       <div class="donation-items">
+        <!-- <div class="tax-receipt">חשבונית לפי סעיף 46 לפקודת מס הכנסה</div> -->
         <div class="items-grid">
           <div class="item"><span>שעון קיר</span><span>600 ₪</span></div>
           <div class="item"><span>מ"ר</span><span>1,000 ₪</span></div>
@@ -283,9 +328,13 @@
           <div class="item"><span>חצי חדר</span><span>25,000 ₪</span></div>
           <div class="item"><span>חדר לימוד</span><span>45,000 ₪</span></div>
         </div>
-        </div>
-        </div>
       </div>
+
+      <div class="footer">
+        תרמו עכשיו וקחו חלק בבניית בית התורה!
+      </div>
+        </div>
+        </div>
     </div>
 
     <script>
